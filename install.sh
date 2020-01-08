@@ -15,10 +15,9 @@ else
   echo "!!!$OS install nodejs failed!!!"
 fi
 
-git_TOKEN=3a34fb8e2c9b72b5e850c2f659e33a986dca1744
-curl -sL https://$git_TOKEN@raw.githubusercontent.com/nhn/toast.test-tools-public/master/network_traffic_image/tool/index.js > index.js
-curl -sL https://$git_TOKEN@raw.githubusercontent.com/nhn/toast.test-tools-public/master/network_traffic_image/tool/package.json > package.json
-curl -sL https://$git_TOKEN@raw.githubusercontent.com/nhn/toast.test-tools-public/master/network_traffic_image/tool/package-lock.json > package-lock.json
+curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/index.js > index.js
+curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/package.json > package.json
+curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/package-lock.json > package-lock.json
 
 sudo fallocate -l 209715200 200m
 sudo npm install -g
