@@ -1,6 +1,8 @@
 #!/bin/bash
 
 OS=$USER
+echo "$OS"
+
 if [ $OS == "centos" ]
 then
   curl -sL https://rpm.nodesource.com/setup_13.x | sudo -E bash -
