@@ -1,24 +1,19 @@
 #!/bin/bash
 
-OS=$USER
-echo "$OS"
-
-if [ $OS == "centos" ]
+if [ $pwd=="/home/ubuntu" ] || [ $pwd=="/home/debian" ]
 then
-  curl -sL https://rpm.nodesource.com/setup_13.x | sudo -E bash -
-  sudo yum install -y nodejs
-elif [ $OS == "ubuntu" ] || [ $OS == "debian" ]
-then
-  curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-else
-  echo "!!!$OS install nodejs failed!!!"
+  apt-get install xz-utils
 fi
+
+wget https://nodejs.org/dist/latest-v10.x/node-v10.18.1-linux-x64.tar.xz
+tar xf node-v10.18.1-linux-x64.tar.xz
+
+export PATH=./node-v10.18.1-linux-x64/bin/:$PATH
 
 curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/index.js > index.js
 curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/package.json > package.json
 curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/package-lock.json > package-lock.json
 
-sudo fallocate -l 209715200 200m
-sudo npm install -g
-sudo ./node_modules/.bin/pm2 start index.js
+fallocate -l 209715200 200m
+npm install -g
+./node_modules/.bin/pm2 start index.js
