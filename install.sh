@@ -5,10 +5,10 @@ then
   apt-get install xz-utils
 fi
 
-wget https://nodejs.org/dist/latest-v10.x/node-v10.19.1-linux-x64.tar.xz
-tar xf node-v10.19.1-linux-x64.tar.xz
+wget https://nodejs.org/dist/latest-v10.x/node-v10.19.0-linux-x64.tar.xz
+tar xf node-v10.19.0-linux-x64.tar.xz
 
-export PATH=./node-v10.19.1-linux-x64/bin/:$PATH
+export PATH=./node-v10.19.0-linux-x64/bin/:$PATH
 
 curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/index.js > index.js
 curl -sL https://raw.githubusercontent.com/leesm120/test.public/master/tool/package.json > package.json
